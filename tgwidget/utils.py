@@ -1,6 +1,5 @@
 import hashlib
 import hmac
-import os
 
 
 class HashCheck:
@@ -21,7 +20,7 @@ class HashCheck:
         msg = bytearray(self.data_check_string(), 'utf-8')
         res = hmac.new(self.secret_key, msg=msg, digestmod=hashlib.sha256).hexdigest()
         return res
-    
+
     def check_hash(self):
         return self.calc_hash() == self.hash
-        
+
